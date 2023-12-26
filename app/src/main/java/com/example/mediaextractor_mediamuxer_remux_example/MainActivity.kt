@@ -13,19 +13,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val textView = findViewById<TextView>(R.id.textView)
-        val files = assets.list("")
-        Log.e("MainActivity", "files: ${files?.joinToString(", ")}")
 
-//        // create media extractor
-//        val mediaExtractor = MediaExtractor()
-//        assets.openFd("clips/testfile.mp4").use { assetFileDescriptor ->
-//            mediaExtractor.setDataSource(
-//                assetFileDescriptor.fileDescriptor,
-//            )
-//        }
-//
-//        // get track count
-//        val trackCount = mediaExtractor.trackCount
-//        textView.text = "trackCount: $trackCount"
+        // create media extractor
+        val mediaExtractor = MediaExtractor()
+        resources.openRawResourceFd(R.raw.testfile).use { fd ->
+            mediaExtractor.setDataSource(fd)
+        }
+
+        textView.text = buildFileInfoString(mediaExtractor)
+    }
+
+    fun buildFileInfoString(mediaExtractor: MediaExtractor): String {
+        val stringBuilder = StringBuilder()
+        val trackCount = mediaExtractor.trackCount
+        stringBuilder.append("trackCount: $trackCount\n")
+        stringBuilder.append("--------------------\n")
+        for (i in 0 until trackCount) {
+            val trackFormat = mediaExtractor.getTrackFormat(i)
+            stringBuilder.append("track $i: $trackFormat\n")
+            stringBuilder.append("--------------------\n")
+        }
+        return stringBuilder.toString()
     }
 }
