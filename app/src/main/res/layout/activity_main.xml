@@ -4,12 +4,12 @@
         android:id="@+id/textViewInput"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Hello World!"
+        android:text="Input File Info"
         app:layout_constraintBottom_toTopOf="@+id/remuxButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.45" />
+        app:layout_constraintHeight_percent="0.35" />
 
     <Button
         android:id="@+id/remuxButton"
@@ -20,24 +20,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewInput"/>
 
-    <TextView
-        android:id="@+id/button_text"
+    <Button
+        android:id="@+id/extractVideoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Progress"
-        app:layout_constraintBottom_toBottomOf="@+id/remuxButton"
-        app:layout_constraintStart_toEndOf="@+id/remuxButton"
-        app:layout_constraintTop_toTopOf="@+id/remuxButton" />
+        android:text="Extract Video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remuxButton"/>
+
+    <Button
+        android:id="@+id/extractAudioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extract Audio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extractVideoButton"/>
+
 
     <TextView
         android:id="@+id/textViewOutput"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Hello World!"
+        android:text="Output File Info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/remuxButton"
+        app:layout_constraintTop_toBottomOf="@+id/extractAudioButton"
         app:layout_constraintHeight_percent="0.45" />
 
 
