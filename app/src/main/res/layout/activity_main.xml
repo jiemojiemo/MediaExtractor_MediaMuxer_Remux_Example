@@ -5,17 +5,17 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Input File Info"
-        app:layout_constraintBottom_toTopOf="@+id/remuxButton"
+        app:layout_constraintBottom_toTopOf="@+id/mixingButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHeight_percent="0.35" />
 
     <Button
-        android:id="@+id/remuxButton"
+        android:id="@+id/mixingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remux"
+        android:text="Mixing Video and Audio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewInput"/>
@@ -27,7 +27,7 @@
         android:text="Extract Video"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/remuxButton"/>
+        app:layout_constraintTop_toBottomOf="@+id/mixingButton"/>
 
     <Button
         android:id="@+id/extractAudioButton"
